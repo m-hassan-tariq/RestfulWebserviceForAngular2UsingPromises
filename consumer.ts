@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SearchMovieModel } from '../shared/model/search-movie.model';
-import { WebApiPromiseService } from '../../shared/service/web-api-promise.service';
+import { SearchMovieModel } from './search-movie.model';
+import { WebApiPromiseService } from './web-api-promise.service';
 
 @Component({
     selector: 'search-movie-list',
