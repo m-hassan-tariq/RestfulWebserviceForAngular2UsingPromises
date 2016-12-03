@@ -32,19 +32,19 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
 * #### Plain HTTP GET using Promises without any parameters
 
         getService(url: string): Promise<any> {
-                return this.http
-                    .get(url, this.options)
-                    .toPromise()
-                    .then(this.extractData)
-                    .catch(this.handleError);
-            }
+        return this.http
+            .get(url, this.options)
+            .toPromise()
+            .then(this.extractData)
+            .catch(this.handleError);
+        }
             
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .getService('api/Movie/TestGetNo')
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .getService('api/Movie/TestGetNo')
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
             
 * #### HTTP GET using Promises with single query string term
 
@@ -54,14 +54,14 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
             .toPromise()
             .then(this.extractData)
             .catch(this.handleError);
-            }
+        }
             
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .getServiceWithDynamicQueryTerm('api/Movie/TestGetParam', "query","hello")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));     
+        this.moviePromiseService
+          .getServiceWithDynamicQueryTerm('api/Movie/TestGetParam', "query","hello")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));     
             
 * #### HTTP GET using Promises with multiple query string term
 
@@ -71,14 +71,14 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
             .toPromise()
             .then(this.extractData)
             .catch(this.handleError);
-            }
+        }
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .getServiceWithMultipleQueryTerm('api/Movie/TestGetParam', "id=1&&name=abc")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .getServiceWithMultipleQueryTerm('api/Movie/TestGetParam', "id=1&&name=abc")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 * #### HTTP GET using Promises with hardcode query string term
 
@@ -91,14 +91,14 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
             .toPromise()
             .then(this.extractData)
             .catch(this.handleError);
-            }          
+        }          
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .getServiceWithFixedQueryString('api/Movie/TestGetParam', this.searchMovieModel.name)
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .getServiceWithFixedQueryString('api/Movie/TestGetParam', this.searchMovieModel.name)
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 * #### HTTP GET using Promises with complex object as query string
 
@@ -122,10 +122,10 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .getServiceWithComplexObjectAsQueryString('api/Movie/TestGet', "{ id: '1', name: 'abc'}")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .getServiceWithComplexObjectAsQueryString('api/Movie/TestGet', "{ id: '1', name: 'abc'}")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 ### HTTP POST Producer Code (web-api-promise.service.ts)
 
@@ -144,10 +144,10 @@ The Http.post method takes body as second parameter and an object that implement
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .createService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .createService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 ### HTTP PUT Producer Code (web-api-promise.service.ts)
 
@@ -166,10 +166,10 @@ The Http.put method takes body as second parameter and an object that implements
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .updateService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .updateService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 ### HTTP PATCH Producer Code (web-api-promise.service.ts)
 
@@ -188,10 +188,10 @@ The Http.patch method takes body as second parameter and an object that implemen
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .patchService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .patchService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 ### HTTP DELETE Producer Code (web-api-promise.service.ts)
 
@@ -209,10 +209,10 @@ The Http.delete method takes an object that implements RequestOptionsArgs as a s
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .deleteServiceWithId('api/Movie/TestGetNo', 111)
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .deleteServiceWithId('api/Movie/TestGetNo', 111)
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 * #### HTTP DELETE using Promises with complex object as parameter
 
@@ -236,10 +236,10 @@ The Http.delete method takes an object that implements RequestOptionsArgs as a s
 
      **Consumer Code in _custom component_**:
      
-           this.moviePromiseService
-                  .deleteService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
-                  .then(result => console.log(result))
-                  .catch(error => console.log(error));
+        this.moviePromiseService
+          .deleteService('api/Movie/TestPost', "{ id: '1', name: 'abc'}")
+          .then(result => console.log(result))
+          .catch(error => console.log(error));
 
 #### Important Note
 
