@@ -21,9 +21,9 @@ Although the Angular http client API returns an *Observable* you can turn it int
 
 * You can follow the promise then(this.extractData).catch(this.handleError) pattern. 
 
-* Alternatively, you can call toPromise(success, fail). The observable's map callback moves to the first success parameter and its catch callback to the second fail parameter in this pattern: .toPromise(this.extractData, this.handleError). 
+* Alternatively, you can call toPromise(success, fail). i.e. -> .toPromise(this.extractData, this.handleError). 
 
-* The errorHandler forwards an error message as a failed promise instead of a failed observable.
+* The errorHandler forwards an error message as a failed promise instead of a failed promises.
 
 ### HTTP GET Code (web-api-promise.service.ts)
 
