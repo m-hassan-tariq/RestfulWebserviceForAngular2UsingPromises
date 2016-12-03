@@ -395,7 +395,4 @@ Angular injects a WebApiPromiseService into the constructor and the component ca
       }
 
 
-
-
-
-
+[Reference](https://angular.io/docs/ts/latest/guide/server-communication.html) 
