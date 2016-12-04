@@ -96,7 +96,7 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
      **Consumer Code in _custom component_**:
      
         this.moviePromiseService
-          .getServiceWithFixedQueryString('api/Movie/TestGetParam', this.searchMovieModel.name)
+          .getServiceWithFixedQueryString('api/Movie/TestGetParam', 'abc')
           .then(result => console.log(result))
           .catch(error => console.log(error));
 
