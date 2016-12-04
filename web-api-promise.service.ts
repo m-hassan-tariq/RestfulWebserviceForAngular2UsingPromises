@@ -2,17 +2,12 @@
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { ToasterService } from './alert.service';
-import { LoaderService } from './loader.service';
-
 @Injectable()
 export class WebApiPromiseService {
     headers: Headers;
     options: RequestOptions;
 
-    constructor(private http: Http,
-        private toasterService: ToasterService,
-        private loaderService: LoaderService) {
+    constructor(private http: Http) {
         this.headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new RequestOptions({ headers: this.headers });
     }
@@ -116,8 +111,6 @@ export class WebApiPromiseService {
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error);
-        this.toasterService.showToaster('error', 'Oops!! An error occurred', error);
-        this.loaderService.displayLoader(false);
         return Promise.reject(error.message || error);
     }
 }
