@@ -11,8 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var alert_service_1 = require('./alert.service');
-var loader_service_1 = require('./loader.service');
 var WebApiPromiseService = (function () {
     function WebApiPromiseService(http, toasterService, loaderService) {
         this.http = http;
@@ -116,7 +114,7 @@ var WebApiPromiseService = (function () {
     };
     WebApiPromiseService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, alert_service_1.ToasterService, loader_service_1.LoaderService])
+        __metadata('design:paramtypes', [http_1.Http])
     ], WebApiPromiseService);
     return WebApiPromiseService;
 }());
