@@ -3,7 +3,7 @@ Restful implementation of GET, POST, DELETE, PATCH, PUT in Angular2 using Promis
 
 The Angular Http client communicates with the server using a familiar HTTP request/response protocol. The Http client is one of a family of services in the Angular HTTP library. When importing from the @angular/http module, SystemJS knows how to load services from the Angular HTTP library because the systemjs.config.js file maps to that module name. The HttpModule is necessary for making HTTP calls.
 
-Benefits of using Global Service (web-api-promise.service.ts)
+Benefits of using Global Service (web-api-promise.service.ts):
 
 * This will contain shared/global service which will be consumed by all modules for executing CRUD operation, Request Type, URL, Parameter Object will be passed to this shared service, so it will make code more maintainable, readable and scalable
 
@@ -15,6 +15,8 @@ Benefits of using Global Service (web-api-promise.service.ts)
 
 * We don’t need to mention protocol and host-name now in every URL request.
 
+-----
+
 ### Promise
 
 Although the Angular http client API returns an *Observable* you can turn it into a *Promise*. It's easy to do, and in simple cases, a promise-based version looks much like the observable-based version:
@@ -25,7 +27,9 @@ Although the Angular http client API returns an *Observable* you can turn it int
 
 * The errorHandler forwards an error message as a failed promise instead of a failed promises.
 
-### HTTP GET Code (web-api-promise.service.ts)
+-----
+
+## HTTP GET Code (web-api-promise.service.ts)
 
 The Http.get method takes an object that implements RequestOptionsArgs as a second parameter.
 
@@ -127,7 +131,7 @@ The Http.get method takes an object that implements RequestOptionsArgs as a seco
           .then(result => console.log(result))
           .catch(error => console.log(error));
 
-### HTTP POST Producer Code (web-api-promise.service.ts)
+## HTTP POST Producer Code (web-api-promise.service.ts)
 
 The Http.post method takes body as second parameter and an object that implements RequestOptionsArgs as a third parameter.
 
@@ -149,7 +153,7 @@ The Http.post method takes body as second parameter and an object that implement
           .then(result => console.log(result))
           .catch(error => console.log(error));
 
-### HTTP PUT Producer Code (web-api-promise.service.ts)
+## HTTP PUT Producer Code (web-api-promise.service.ts)
 
 The Http.put method takes body as second parameter and an object that implements RequestOptionsArgs as a third parameter.
 
@@ -171,7 +175,7 @@ The Http.put method takes body as second parameter and an object that implements
           .then(result => console.log(result))
           .catch(error => console.log(error));
 
-### HTTP PATCH Producer Code (web-api-promise.service.ts)
+## HTTP PATCH Producer Code (web-api-promise.service.ts)
 
 The Http.patch method takes body as second parameter and an object that implements RequestOptionsArgs as a third parameter.
 
@@ -193,7 +197,7 @@ The Http.patch method takes body as second parameter and an object that implemen
           .then(result => console.log(result))
           .catch(error => console.log(error));
 
-### HTTP DELETE Producer Code (web-api-promise.service.ts)
+## HTTP DELETE Producer Code (web-api-promise.service.ts)
 
 The Http.delete method takes an object that implements RequestOptionsArgs as a second parameter.
 
@@ -257,7 +261,9 @@ In the return statement, options is the third argument of the post method, as sh
                     }).subscribe((response) => { console.log(response) });
         }
 
-## Restful HTTP Service using Promises
+-----
+
+# Restful HTTP Service using Promises
 
 Angular injects a WebApiPromiseService into the constructor and the component calls that service to fetch and save data. The component does not talk directly to the Angular Http client. The component doesn't know or care how it gets the data. It delegates to the WebApiPromiseService. **This is a golden rule: always delegate data access to a supporting service class.**
 
